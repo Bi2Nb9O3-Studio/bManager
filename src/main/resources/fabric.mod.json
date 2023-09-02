@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "bManager",
+  "id": "bmanager",
   "version": "${version}",
   "name": "bManager",
   "description": "",
@@ -12,15 +12,12 @@
   "icon": "assets/bManager/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": [
-      "xyz.bi2nb9o3.bmanager.client.BManagerClient"
-    ],
     "main": [
-      "xyz.bi2nb9o3.bmanager.BManager"
+      "xyz.bi2nb9o3.bmanager.bmanager"
     ]
   },
   "mixins": [
-    "bManager.mixins.json"
+    "bmanager.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
