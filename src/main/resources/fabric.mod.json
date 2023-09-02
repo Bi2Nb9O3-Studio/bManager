@@ -12,7 +12,7 @@
   "icon": "assets/bManager/icon.png",
   "environment": "client",
   "entrypoints": {
-    "main": [
+    "client": [
       "xyz.bi2nb9o3.bmanager.bmanager"
     ]
   },
