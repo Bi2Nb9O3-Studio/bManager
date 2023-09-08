@@ -14,6 +14,14 @@ repositories {
     // for more information about repositories.
 //    Malilib
 //    maven { url 'https://masa.dy.fi/maven' }
+//    Modrinth
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 dependencies {
@@ -25,6 +33,7 @@ dependencies {
         // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 //    modImplementation "fi.dy.masa.malilib:malilib-fabric-${project.minecraft_version_out}:${project.malilib_version}"
+    modImplementation "maven.modrinth:coloredglowlib:2.2.1"
     }
 
 processResources {
