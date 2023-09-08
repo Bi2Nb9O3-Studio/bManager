@@ -18,7 +18,7 @@ import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.minecraft.text.Text;
-
+import net.fabricmc.simplelibs.simpleconfig.*;
 import java.util.Objects;
 
 public class bmanager implements ClientModInitializer {

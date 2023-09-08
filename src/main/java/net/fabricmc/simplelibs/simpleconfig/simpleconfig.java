@@ -1,3 +1,4 @@
+package net.fabricmc.simplelibs.simpleconfig;
 
 import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
@@ -11,7 +12,7 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class SimpleConfig {
+public class simpleconfig {
 
     private static final Logger LOGGER = LogManager.getLogger("SimpleConfig");
     private final HashMap<String, String> config = new HashMap<>();
@@ -55,10 +56,10 @@ public class SimpleConfig {
          * Loads the config from the filesystem.
          *
          * @return config object
-         * @see SimpleConfig
+         * @see simpleconfig
          */
-        public SimpleConfig request() {
-            return new SimpleConfig( this );
+        public simpleconfig request() {
+            return new simpleconfig( this );
         }
 
         private String getConfig() {
@@ -110,7 +111,7 @@ public class SimpleConfig {
         }
     }
 
-    private SimpleConfig( ConfigRequest request ) {
+    private simpleconfig(ConfigRequest request ) {
         this.request = request;
         String identifier = "Config '" + request.filename + "'";
 
@@ -143,7 +144,7 @@ public class SimpleConfig {
      * key does not exist.
      *
      * @return  value corresponding to the given key
-     * @see     SimpleConfig#getOrDefault
+     * @see     simpleconfig#getOrDefault
      */
     @Deprecated
     public String get( String key ) {
