@@ -18,11 +18,17 @@ import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.minecraft.text.Text;
-import net.fabricmc.simplelibs.simpleconfig.*;
+import xyz.bi2nb9o3.bmanager.config.BMConfig;
+import xyz.bi2nb9o3.bmanager.config.BMConfigModel.*;
+
 import java.util.Objects;
 
 public class bmanager implements ClientModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("bManager");
+    public static final BMConfig CONFIG;
+    static {
+        CONFIG = BMConfig.createAndLoad();
+    }
     private Object getEntity(){
 //        Get the entity in sight
         MinecraftClient client = MinecraftClient.getInstance();
@@ -56,20 +62,28 @@ public class bmanager implements ClientModInitializer {
     public void onInitializeClient() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (mainKeyBinding.wasPressed()) {
+                if(!CONFIG.enableMod()){
+                    return;
+                }
                 Object re=getEntity();
                 String str;
                 if(Objects.equals(re.toString(), "0")){
                     str="No entity got!";
                 }else{
                     Entity re1=(Entity) re;
-                    if(re1.getType()==client.player.getType()){
-                        str=re1.getDisplayName().getString();
-                    }else {
-                        str="No player got!";
-                    }
+//                    if(re1.getType()==client.player.getType()){
+//                        str=re1.getDisplayName().getString();
+//                        re1.setGlowing(true);
+//                    }else {
+//                        str="No player got!";
+//                    }
+                    str=re1.getDisplayName().getString();
                 }
-                client.player.sendMessage(Text.literal(str), false);
-                LOGGER.info("Get the entity");
+                if(Objects.equals(str, "No entity got!")){
+                    client.player.sendMessage(Text.translatable("text.bmanager.message.miss_target"),false);
+                }else {
+                    client.player.sendMessage(Text.translatable("text.bmanager.message.find_entity",str), false);
+                }
             }
         });
 
