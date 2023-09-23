@@ -1,0 +1,6 @@
+{
+  "text.bmanager.message.find_entity": "Find the Entity(Name:%s).",
+  "text.bmanager.message.miss_target": "Couldn't get the entity",
+  "text.config.bManager.title": "bManager Config",
+  "text.config.bManager.option.enableMod": "Enable the mod"
+}
