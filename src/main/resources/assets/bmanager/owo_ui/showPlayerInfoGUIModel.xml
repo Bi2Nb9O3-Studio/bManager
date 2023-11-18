@@ -1,0 +1,13 @@
+<owo-ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontentS.com/wisp-forest/owo-lib/1.20/owo-ui.xsd">
+    <components>
+        <draggable>
+            <grid-layout rows="1" columns="2" id="bMain">
+                <children></children>
+            </grid-layout>
+            <surface>
+                <panel dark="true"/>
+            </surface>
+        </draggable>
+    </components>
+</owo-ui>
