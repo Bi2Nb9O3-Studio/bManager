@@ -38,7 +38,7 @@ public class ShowPlayerInfoGUI extends BaseOwoScreen<FlowLayout> {
         rootComponent.child(
                 Containers.horizontalFlow(Sizing.fill(80), Sizing.fill(80))
                         .child(
-                                Components.entity(Sizing.fixed(150), this.target).allowMouseRotation(true).showNametag(true).scaleToFit(true)
+                                Components.entity(Sizing.fixed(150), this.target).allowMouseRotation(true).showNametag(true).scaleToFit(true).lookAtCursor(true)
                         )
                         .child(
                                 Containers.verticalFlow(Sizing.fill(40), Sizing.fill(80))

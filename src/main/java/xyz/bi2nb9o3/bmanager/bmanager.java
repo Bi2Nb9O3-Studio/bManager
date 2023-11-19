@@ -20,7 +20,6 @@ import xyz.bi2nb9o3.bmanager.config.BMConfig;
 import xyz.bi2nb9o3.bmanager.config.BMConfigModel;
 import xyz.bi2nb9o3.bmanager.gui.ShowPlayerInfoGUI;
 import xyz.bi2nb9o3.bmanager.network.database;
-
 import java.util.Objects;
 
 public class bmanager implements ClientModInitializer {
@@ -47,6 +46,12 @@ public class bmanager implements ClientModInitializer {
             case ENTITY:
                 EntityHitResult entityHit = (EntityHitResult) hit;
                 Entity entity = entityHit.getEntity();
+                if(CONFIG.onlyMatchPlayer()) {
+                    assert client.player != null;
+                    if (entity.getType()!=client.player.getType()) {
+                        return 0;
+                    }
+                }
                 return entity;
             default:
                 return 0;
@@ -73,6 +78,7 @@ public class bmanager implements ClientModInitializer {
 //      Keyboard Click Event
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (mainKeyBinding.wasPressed()) {
+                System.out.println(CONFIG.allOptions().toString());
                 if(!CONFIG.enableMod()){
                     return;
                 }
@@ -88,15 +94,12 @@ public class bmanager implements ClientModInitializer {
                     if(CONFIG.DataUseAsId()== BMConfigModel.DataUseAsIdChoices.ClientUUID){
                         sid=re.getUuidAsString();
                     }else if(CONFIG.DataUseAsId()==BMConfigModel.DataUseAsIdChoices.PlayerName){
-                        sid=re.getDisplayName().toString();
+                        sid=re.getDisplayName().getString();
                     }
                     client.setScreen(new ShowPlayerInfoGUI(re,database.getData(sid,database.analyzeData(CONFIG.showDetailsJson()))));
                     //database.getData(sid,database.analyzeData(CONFIG.showDetailsJson()))
                 }
             }
-//            while (testKeyBinding.wasPressed()){
-//
-//            }
         });
 
     }

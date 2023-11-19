@@ -12,7 +12,7 @@ import java.util.Dictionary;
 public class BMConfigModel {
     public boolean enableMod=true;
 
-    @SectionHeader("Database Connection")
+    @SectionHeader("DatabaseConnection")
 
     public String jdbcURL="/Default/ JDBC URL";
 
@@ -20,13 +20,17 @@ public class BMConfigModel {
 
     public String dbPassword="/Default/ Password";
 
-    @SectionHeader("Database Selector")
+    @SectionHeader("DatabaseSelector")
 
     public DataUseAsIdChoices DataUseAsId=DataUseAsIdChoices.PlayerName;
 
     public enum DataUseAsIdChoices {
         ClientUUID, PlayerName;
     }
+
+    public boolean onlyMatchPlayer=true;
+
+    public String indexRowName="id";
 
     public String showDetailsJson="[{'table':'1','row':'2',show:['Player Money','$']}]";
 }

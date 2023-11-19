@@ -2,5 +2,16 @@
   "text.bmanager.message.find_entity": "Find the Entity(Name:%s).",
   "text.bmanager.message.miss_target": "Couldn't get the entity",
   "text.config.bManager.title": "bManager Config",
-  "text.config.bManager.option.enableMod": "Enable the mod"
+  "text.config.bManager.option.enableMod": "Enable the mod",
+  "text.config.bManager.section.DatabaseConnection": "Database Connection",
+  "text.config.bManager.option.jdbcURL": "Java DataBase Connectivity URL",
+  "text.config.bManager.option.dbPassword": "Database Password",
+  "text.config.bManager.option.dbUsername": "Databse Username(not recommend using root)",
+  "text.config.bManager.section.DatabaseSelector": "Database Selector",
+  "text.config.bManager.option.DataUseAsId": "Data used as an index",
+  "text.config.bManager.option.DataUseAsId.value.clientuuid": "Client entity UUID",
+  "text.config.bManager.option.DataUseAsId.value.playername": "Player name",
+  "text.config.bManager.option.onlyMatchPlayer": "Only match players",
+  "text.config.bManager.option.indexRowName": "Column name used as index",
+  "text.config.bManager.option.showDetailsJson": "Custom player info display JSON"
 }
