@@ -12,6 +12,9 @@
   "text.config.bManager.option.DataUseAsId.value.clientuuid": "Client entity UUID",
   "text.config.bManager.option.DataUseAsId.value.playername": "Player name",
   "text.config.bManager.option.onlyMatchPlayer": "Only match players",
-  "text.config.bManager.option.indexRowName": "Column name used as index",
-  "text.config.bManager.option.showDetailsJson": "Custom player info display JSON"
+  "text.config.bManager.option.indexColName": "Column name used as index",
+  "text.config.bManager.option.showDetailsJson": "Custom player info display JSON",
+  "category.bmanager.main": "bManager",
+  "key.bmanager.main": "Main function",
+  "key.bmanager.test": "Test function(for developers)"
 }

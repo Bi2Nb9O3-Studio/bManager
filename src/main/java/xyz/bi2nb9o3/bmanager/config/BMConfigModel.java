@@ -30,7 +30,7 @@ public class BMConfigModel {
 
     public boolean onlyMatchPlayer=true;
 
-    public String indexRowName="id";
+    public String indexColName="id";
 
-    public String showDetailsJson="[{'table':'1','row':'2',show:['Player Money','$']}]";
+    public String showDetailsJson="[{'table':'1','col':'2',show:['Player Money','$']}]";
 }

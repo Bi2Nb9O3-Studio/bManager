@@ -32,11 +32,11 @@ public class database {
             for (Object obj : dataSelector) {
                 JSONObject jsonObject = (JSONObject) obj;
                 String table = jsonObject.getString("table");
-                String row = jsonObject.getString("row");
+                String row = jsonObject.getString("col");
                 JSONArray show = jsonObject.getJSONArray("show");
                 Statement statement = conn.createStatement();
                 System.out.println("SELECT " + row + " FROM " + table + " WHERE id = '" + sid + "'");
-                ResultSet resultSet = statement.executeQuery("SELECT " + row + " FROM " + table + " WHERE "+CONFIG.indexRowName()+" = '" + sid + "'");
+                ResultSet resultSet = statement.executeQuery("SELECT " + row + " FROM " + table + " WHERE "+CONFIG.indexColName()+" = '" + sid + "'");
                 while (resultSet.next()) {
                     String data = resultSet.getString(row);
                     results.add(show.getString(0) + " " + data + " " + show.getString(1));
